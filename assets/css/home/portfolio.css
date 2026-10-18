@@ -1,0 +1,263 @@
+/* =============================================
+   ВЫПОЛНЕННЫЕ ОБЪЕКТЫ
+   ============================================= */
+
+.home-portfolio {
+  padding: 80px 0;
+  background: var(--bg);
+}
+
+.home-portfolio__header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.home-portfolio__eyebrow {
+  color: var(--primary);
+  margin-bottom: 14px;
+}
+
+.home-portfolio__title {
+  margin-bottom: 14px;
+  color: var(--color-light);
+}
+
+.home-portfolio__text {
+  color: var(--color-light-secondary);
+  max-width: 560px;
+}
+
+.home-portfolio__btn {
+  flex-shrink: 0;
+}
+
+/* ---- Сетка объектов ---- */
+
+.home-portfolio-grid__controls {
+  display: none;
+  position: relative;
+  height: 40px;
+  margin-top: 40px;
+}
+
+.home-portfolio-grid__controls > * {
+  position: initial;
+  transform: none !important;
+  margin: 0 !important;
+}
+
+.home-portfolio-grid__card {
+  background: var(--color-light);
+  padding: 10px;
+}
+
+.home-portfolio-grid__photo-btn {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  cursor: pointer;
+}
+
+.home-portfolio-grid__heading {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: max-content;
+  align-self: flex-start;
+}
+
+.home-portfolio-grid__photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.home-portfolio-grid__body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding-top: 12px;
+  padding-right: 28px;
+  
+}
+
+.home-portfolio-grid__title {
+  color: var(--color-dark);
+  margin-bottom: 4px;
+}
+
+.home-portfolio-grid__subtitle {
+  color: var(--color-dark);
+  opacity: .7;
+}
+
+.home-portfolio-grid__stats {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.home-portfolio-grid__stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.home-portfolio-grid__stat .text-xs {
+  color: #4D4D4D;
+  font-size: 12px;
+}
+.home-portfolio-grid__stat .text-s {
+  color: #3D3D3D;
+  max-width: 135px;
+}
+
+.home-portfolio-grid__stat .title-4 {
+  color: var(--primary);
+  white-space: nowrap;
+}
+
+/* ============================================
+   ДЕСКТОП ≥ 1081px — статичная сетка вместо слайдера
+   ============================================ */
+
+@media (min-width: 1081px) {
+  .home-portfolio-grid .swiper-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .home-portfolio-grid .swiper-slide {
+    width: auto !important;
+  }
+
+  .home-portfolio-grid .swiper-slide:nth-child(1) {
+    grid-column: 1;
+    grid-row: 1 / 3;
+  }
+
+  .home-portfolio-grid .swiper-slide:nth-child(2) {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .home-portfolio-grid .swiper-slide:nth-child(3) {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .home-portfolio-grid .swiper-slide:nth-child(n+2) {
+    display: flex;
+  }
+
+  .home-portfolio-grid .swiper-slide:nth-child(n+2) .home-portfolio-grid__photo-btn {
+    width: 240px;
+    aspect-ratio: unset;
+    flex-shrink: 0;
+    align-self: stretch;
+  }
+
+  .home-portfolio-grid .swiper-slide:nth-child(n+2) .home-portfolio-grid__body {
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    gap: 20px;
+    padding: 0 52px 0 12px;
+  }
+}
+
+@media (max-width: 1280px) {
+  .home-portfolio-grid .swiper-slide:nth-child(n+2) .home-portfolio-grid__body {
+    padding-right: 0;
+  }
+
+  .home-portfolio-grid__stats {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .home-portfolio-grid__body {
+    padding-right: 0;
+  }
+}
+
+/* ============================================
+   ПЛАНШЕТ / МОБАЙЛ ≤ 1080px
+   ============================================ */
+
+@media (max-width: 1080px) {
+  .home-portfolio__header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .home-portfolio__btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .home-portfolio-grid__controls {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+  }
+
+  .home-portfolio-grid__nav-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: var(--color-light);
+    color: var(--color-dark);
+    cursor: pointer;
+  }
+  
+  .home-portfolio-grid__nav-btn svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .home-portfolio-grid__nav-btn::after {
+    display: none;
+  }
+
+  .home-portfolio-grid__nav-btn.swiper-button-prev svg {
+    transform: rotate(180deg);
+  }
+
+  .home-portfolio-grid__nav-btn.swiper-button-disabled {
+    opacity: .3;
+    cursor: default;
+  }
+}
+
+/* ============================================
+   МОБАЙЛ ≤ 768px
+   ============================================ */
+
+@media (max-width: 768px) {
+  .home-portfolio {
+    padding: 56px 0;
+  }
+
+  .home-portfolio-grid__body {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .home-portfolio-grid__stats {
+    width: 100%;
+    gap: 20px;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}

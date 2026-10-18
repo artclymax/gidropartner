@@ -1,0 +1,419 @@
+/* =============================================
+   СТРАНИЦА «КОНТАКТЫ»
+   ============================================= */
+
+.contacts-hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 460px;
+  display: flex;
+  align-items: center;
+  padding: calc(var(--header-h) + 20px) 0 112px;
+}
+
+.contacts-hero__bg {
+  position: absolute;
+  top: 0
+  ;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.contacts-hero__bg::after {
+  background: linear-gradient(85.87deg, rgba(153, 153, 154, 0.5) 31.15%, rgba(153, 153, 154, 0.4) 49.83%, rgba(153, 153, 154, 0.4) 56.66%, rgba(153, 153, 154, 0.1) 63.74%);
+  position: absolute;
+  content: '';
+  inset: 0;
+}
+
+.contacts-hero__bg picture,
+.contacts-hero__bg img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.contacts-hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+.contacts-hero .breadcrumb {
+  margin-bottom: 100px;
+}
+
+.contacts-hero__inner {
+  max-width: 686px;
+}
+
+.contacts-hero__eyebrow {
+  color: var(--primary);
+  margin-bottom: 14px;
+}
+
+.contacts-hero__title {
+  margin-bottom: 14px;
+  color: var(--color-dark);
+}
+
+.contacts-hero__text {
+  color: var(--color-dark-secondary);
+}
+
+/* ---- Способы связи ---- */
+
+.contacts-methods {
+  padding: 112px 0;
+  background: var(--bg);
+}
+
+.contacts-methods__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.contacts-methods__card {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  background: var(--color-light);
+}
+
+.contacts-methods__icon {
+  width: 85px;
+  height: 85px;
+  border: 1px solid var(--primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  margin-bottom: 16px;
+}
+
+.contacts-methods__icon img {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+}
+
+.contacts-methods__label {
+  color: var(--color-dark);
+  margin-bottom: 12px;
+  font-weight: 600;
+  text-transform: initial;
+}
+
+.contacts-methods__value {
+  color: var(--color-dark);
+  margin-bottom: 12px;
+}
+
+.contacts-methods__value * {
+  color: inherit;
+  font-family: inherit;
+}
+
+.contacts-methods__text {
+  color: #3D3D3D;
+}
+
+.contacts-methods__btn {
+  margin-top: 12px;
+  color: var(--primary);
+  padding: 0;
+  width: 100%;
+}
+
+/* ---- Форма + карта + реквизиты ---- */
+
+.contacts-form-map {
+  position: relative;
+  overflow: hidden;
+  padding: 80px 0;
+  background: var(--color-dark-secondary);
+}
+
+.contacts-form-map__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.contacts-form-map__bg picture,
+.contacts-form-map__bg img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.contacts-form-map__bg::after {
+  position: absolute;
+  inset: 0;
+  content: '';
+  background: linear-gradient(74.14deg, rgba(67, 67, 70, 0.5) 1.54%, rgba(67, 67, 70, 0.5) 50.39%);
+}
+
+.contacts-form-map .container {
+  position: relative;
+  z-index: 1;
+}
+
+.contacts-form-map__grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 126px;
+  align-items: start;
+}
+
+.contacts-card {
+  background: var(--color-light);
+  padding: 44px 32px;
+  height: 100%;
+  box-shadow: 0px 0px 20px 0px #00000066;
+
+}
+
+.contacts-card__title {
+  color: var(--color-dark);
+  margin-bottom: 24px;
+}
+
+.contacts-card__text {
+  color: var(--color-dark-secondary);
+  margin-bottom: 24px;
+}
+
+.contacts-form-card .modal__form {
+  gap: 16px;
+}
+
+.contacts-map-card__list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.contacts-map-card__item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--color-dark);
+}
+
+.contacts-map-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.contacts-map-card__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.contacts-map-card__bg picture,
+.contacts-map-card__bg img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.contacts-map-card__bg ~ .contacts-card__title,
+.contacts-map-card__bg ~ .contacts-card__text,
+.contacts-map-card__bg ~ .contacts-map-card__list {
+  position: relative;
+  z-index: 1;
+}
+
+/* ---- Реквизиты ---- */
+
+.contacts-requisites__inner {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 86px;
+  margin-top: 64px;
+  background: var(--color-light);
+  padding: 32px;
+}
+
+.contacts-requisites__wrapper {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.contacts-requisites__name {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contacts-requisites__items {
+  display: flex;
+  align-items: flex-start;
+  gap: 44px;
+}
+
+.contacts-requisites__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.contacts-requisites__bg picture,
+.contacts-requisites__bg img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.contacts-requisites__icon,
+.contacts-requisites__name,
+.contacts-requisites__field {
+  position: relative;
+  z-index: 1;
+}
+
+.contacts-requisites__icon {
+  flex-shrink: 0;
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: #E5E5E5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-dark);
+}
+
+.contacts-requisites__icon img {
+  width: 75px;
+  height: 75px;
+  object-fit: contain;
+}
+
+.contacts-requisites__field {
+
+  max-width: 168px;
+}
+
+.contacts-requisites__name .text-s,
+.contacts-requisites__field .text-s {
+  color: #6E6E6E;
+  margin-bottom: 16px;
+}
+
+.contacts-requisites__name .title-3,
+.contacts-requisites__name .title-5 {
+  color: var(--color-dark);
+}
+
+.contacts-requisites__field .text {
+  color: #3D3D3D;
+}
+
+@media (max-width: 1280px) {
+  .contacts-form-map__grid {
+    gap: 40px;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ============================================
+   ПЛАНШЕТ / МОБАЙЛ ≤ 1080px
+   ============================================ */
+
+@media (max-width: 1080px) {
+  .contacts-methods__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contacts-form-map__grid {
+    gap: 40px;
+    grid-template-columns: 300px 1fr;
+  }
+
+  .contacts-form-map__grid .modal__row {
+    gap: 20px;
+    grid-template-columns: 1fr;
+  }
+
+  
+
+  .contacts-requisites__inner {
+    gap: 20px;
+  }
+}
+
+/* ============================================
+   МОБАЙЛ ≤ 768px
+   ============================================ */
+
+@media (max-width: 768px) {
+  .contacts-hero {
+    min-height: 0;
+    padding-bottom: 56px;
+  }
+
+  .contacts-hero .breadcrumb {
+    margin-bottom: 28px;
+  }
+
+  .contacts-methods {
+    padding: 56px 0;
+  }
+
+  .contacts-methods__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contacts-form-map {
+    padding: 48px 0;
+  }
+
+  .contacts-card {
+    padding: 12px;
+  }
+
+  .contacts-form-card .modal__row {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .contacts-requisites__inner {
+    margin-top: 40px;
+    padding: 12px;
+  }
+
+  .contacts-requisites__items {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .contacts-requisites__inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+  }
+
+  .contacts-map-card {
+    padding-bottom: clamp(290px, 85vw, 580px);
+  }
+
+  .contacts-form-map__grid {
+    grid-template-columns: 1fr;
+  }
+}

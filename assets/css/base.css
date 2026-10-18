@@ -1,0 +1,69 @@
+:root {
+  /* Шрифты */
+  --font-heading: 'Bebas Neue Cyrillic', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, serif;
+
+  --bg: #1B1F29;
+  --bg-rgb: 27, 31, 41;
+  --overlay-gray: 67, 67, 70;
+  --primary: #3F3FCD;
+  --color-light: #F6F6F6;
+  --color-light-secondary: #DEDEDE;
+  --color-dark: #1A1A1A;
+  --color-dark-secondary: #2C2B2B;
+  --white: #fff;
+  --danger: #E5484D;
+
+  --header-h: 130px;
+}
+
+@media (max-width: 1080px) {
+  :root {
+    --header-h: 80px;
+  }
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  appearance: none;
+  margin: 0;
+  background: none;
+  border: none;
+  outline: transparent;
+  list-style: none;
+  box-sizing: border-box;
+  font-family: var(--font-body);
+  color: var(--color-light);
+  text-decoration: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+
+@media (max-width: 1080px) {
+  .container {
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 10px;
+  }
+}

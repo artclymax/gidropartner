@@ -1,0 +1,333 @@
+/* =============================================
+   МОДАЛКА «ЗАКАЗАТЬ ЗВОНОК»
+   ============================================= */
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .25s ease;
+}
+
+.modal.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(var(--bg-rgb), .7);
+}
+
+.modal__dialog {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 560px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: var(--color-light);
+  padding: 44px 32px;
+  transform: translateY(20px);
+  transition: transform .25s ease;
+}
+
+.modal.open .modal__dialog {
+  transform: translateY(0);
+}
+
+.modal__close {
+  position: absolute;
+  top: 44px;
+  right: 32px;
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-dark);
+  cursor: pointer;
+}
+
+/* ---- Лайтбокс фото (страница «Проекты») ---- */
+
+.photo-modal .modal__overlay {
+  background: rgba(var(--bg-rgb), .9);
+}
+
+.photo-modal__dialog {
+  position: relative;
+  z-index: 1;
+  max-width: 90vw;
+  max-height: 90vh;
+}
+
+.photo-modal__dialog img {
+  display: block;
+  max-width: 90vw;
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+}
+
+.photo-modal .modal__close {
+  top: -40px;
+  right: 0;
+  color: var(--white);
+}
+
+.modal__title {
+  color: var(--color-dark);
+  margin-bottom: 16px;
+  padding-right: 40px;
+  font-size: 28px;
+}
+
+.modal__text {
+  color: var(--color-dark);
+  opacity: .7;
+  margin-bottom: 24px;
+}
+
+/* ---- Форма ---- */
+
+.modal__form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.modal__row {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr 1fr;
+}
+
+.modal__row .input-wrapper {
+  flex: 1;
+}
+
+.input-wrapper {
+  display: grid;
+  gap: 6px;
+}
+
+.input-label {
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: var(--color-dark);
+}
+
+.input-text {
+  height: 46px;
+  padding: 0 20px;
+  border: 1px solid #909092;
+  background: var(--white);
+  color: var(--color-dark);
+  font-family: var(--font-body);
+  font-size: 14px;
+  width: 100%;
+}
+
+textarea.input-text {
+  height: auto;
+  min-height: 90px;
+  padding: 12px 16px;
+  resize: vertical;
+}
+
+.input-text:focus {
+  border-color: var(--primary);
+}
+
+select.input-text {
+  cursor: pointer;
+}
+
+.input-select {
+  position: relative;
+  width: 100%;
+    max-width: 100%;
+}
+
+.input-select svg {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+  color: var(--color-dark);
+  pointer-events: none;
+  transition: transform .15s ease;
+}
+
+/* ---- Кастомный select ---- */
+
+.custom-select__trigger {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding-right: 40px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.custom-select__value {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+  color: var(--color-dark);
+  width: 100%;
+  max-width: calc(100% - 60px);
+  position: absolute;
+}
+
+.custom-select.has-value .custom-select__value {
+  opacity: 1;
+}
+
+.custom-select.is-open .input-select svg {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.custom-select__list {
+  display: none;
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  z-index: 5;
+  max-height: 240px;
+  overflow-y: auto;
+  background: var(--white);
+  border: 1px solid var(--color-light-secondary);
+  box-shadow: 0 12px 24px rgba(var(--bg-rgb), .2);
+}
+
+.custom-select.is-open .custom-select__list {
+  display: block;
+}
+
+.custom-select__option {
+  padding: 12px 16px;
+  color: var(--color-dark);
+  font-family: var(--font-body);
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.custom-select__option:hover,
+.custom-select__option.is-selected {
+  background: var(--color-light);
+  color: var(--primary);
+}
+
+.input-text--error {
+  border-color: var(--danger);
+}
+
+.input-error-message {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: var(--danger);
+}
+
+/* ---- Чекбокс согласия ---- */
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.checkbox__input {
+  position: absolute;
+  opacity: 0;
+  width: 0px;
+  height: 0px;
+}
+
+.checkbox__box {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #909092;
+  position: relative;
+}
+
+.checkbox__input:checked + .checkbox__box::after {
+  content: '';
+  position: absolute;
+      left: 5px;
+    top: 0px;
+    width: 8px;
+    height: 13px;
+  border: solid var(--primary);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.checkbox--error .checkbox__box {
+  border-color: var(--danger);
+}
+
+.checkbox__label {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--color-dark);
+}
+
+.checkbox__label a {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+.checkbox__label a:hover {
+  text-decoration: none;
+}
+
+.modal__submit {
+  width: 100%;
+  justify-content: center;
+}
+
+.form__error {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--danger);
+}
+
+/* ============================================
+   МОБАЙЛ ≤ 768px
+   ============================================ */
+
+@media (max-width: 768px) {
+  .modal__dialog {
+    padding: 20px 12px;
+  }
+
+  .modal__close {
+    top: 20px;
+    right: 12px;
+  }
+
+  .modal__row {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  /* Имя выше Телефона на мобильных в модалке «Заказать звонок», без изменения порядка в DOM */
+  #callback-modal .modal__row .input-wrapper:nth-child(2) {
+    order: -1;
+  }
+}
+

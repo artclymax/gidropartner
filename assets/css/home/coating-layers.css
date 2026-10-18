@@ -1,0 +1,159 @@
+/* =============================================
+   СЛОИ ПОКРЫТИЯ
+   ============================================= */
+
+.home-coating-layers {
+  position: relative;
+  overflow: hidden;
+  padding: 112px 0;
+  background: var(--color-dark-secondary);
+}
+
+.home-coating-layers__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.home-coating-layers__bg picture,
+.home-coating-layers__bg img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.home-coating-layers .container {
+  position: relative;
+  z-index: 1;
+}
+
+.home-coating-layers__inner {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.home-coating-layers__content {
+  max-width: 690px;
+  width: 100%;
+}
+
+.home-coating-layers__eyebrow {
+  color: var(--primary);
+  margin-bottom: 14px;
+}
+
+.home-coating-layers__title {
+  margin-bottom: 14px;
+  color: var(--color-dark);
+}
+
+.home-coating-layers__text {
+  color: var(--color-dark-secondary);
+  margin-bottom: 64px;
+}
+
+.home-coating-layers__features {
+  display: grid;
+  grid-template-columns: 1fr max-content 1fr;
+  gap: 56px;
+  margin-bottom: 64px;
+}
+
+.home-coating-layers__features > span {
+  height: 73px;
+  width: 1px;
+  background-color: #616161;
+  display: block;
+  align-self: center;
+  opacity: 0.3;
+}
+
+.home-coating-layers__feature {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.home-coating-layers__feature-icon {
+  flex-shrink: 0;
+  width: 81px;
+  height: 81px;
+  border-radius: 8px;
+  border: 1px solid #3F3FCD;
+  background: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-coating-layers__feature-icon img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+}
+
+.home-coating-layers__feature-body {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.home-coating-layers__feature-title {
+  color: var(--color-dark);
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.home-coating-layers__feature-text {
+   color: var(--color-dark-secondary);
+}
+
+/* ============================================
+   ПЛАНШЕТ / МОБАЙЛ ≤ 1080px
+   ============================================ */
+
+@media (max-width: 1080px) {
+
+}
+
+/* ============================================
+   МОБАЙЛ ≤ 768px
+   ============================================ */
+
+@media (max-width: 768px) {
+  .home-coating-layers {
+    padding: 56px 0 clamp(320px, 80vw, 620px);
+  }
+
+  .home-coating-layers__features > span {
+    height: 100%;
+  }
+
+  .home-coating-layers__features {
+    gap: 16px 8px;
+    margin-bottom: 40px;
+  }
+
+  .home-coating-layers__feature-icon {
+    background-color: rgba(255, 255, 255, 0.6);
+  }
+
+  .home-coating-layers__feature {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .home-coating-layers__feature-title {
+    font-size: 16px;
+  }
+
+  .home-coating-layers__text {
+    margin-bottom: 40px;
+  }
+
+  .home-coating-layers__bg img {
+    object-position: bottom center;
+  }
+}

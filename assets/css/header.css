@@ -1,0 +1,252 @@
+/* =============================================
+   ШАПКА
+   ============================================= */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  height: var(--header-h);
+  background: #000000CC;
+  display: flex;
+  align-items: center;
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  gap: 24px;
+}
+
+/* ---- Лого: иконка + текст (grid 2 колонки / 2 строки) ---- */
+
+.header__logo {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  flex-shrink: 0;
+}
+
+.header__logo-icon {
+  flex-shrink: 0;
+  width: 71px;
+  height: auto;
+}
+
+.header__logo-text {
+  line-height: 1.1;
+  text-transform: uppercase;
+  font-family: var(--font-heading);
+}
+
+/* ---- Nav (десктоп) ---- */
+
+.header__menu {
+  display: flex;
+  align-items: center;
+  gap: 44px;
+}
+
+.header__menu li {
+  margin-bottom: 0;
+}
+
+.header__menu a {
+  font-size: 16px;
+  color: var(--color-light);
+}
+
+.header__menu .current_page_item a {
+  color: var(--primary);
+}
+
+.header__menu a:hover {
+  color: var(--primary);
+}
+
+/* ---- Контакты (десктоп) ---- */
+
+.header__wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header__contacts {
+  display: grid;
+  grid-template-columns: auto max-content;
+  gap: 4px 12px;
+  width: max-content;
+}
+
+.header__phone {
+  display: flex;
+  align-items: center;
+  font-family: var(--font-heading);
+  font-size: 22px;
+  justify-self: center;
+}
+
+.header__contacts svg {
+  color: var(--primary);
+  flex-shrink: 0;
+  grid-row: 1 / 3;
+  align-self: center;
+}
+
+.header__hours {
+  font-family: var(--font-body);
+  font-size: 16px;
+  justify-self: center;
+}
+
+/* ---- CTA (десктоп) ---- */
+
+.header__cta {
+  width: 172px;
+  padding: 0 20px;
+}
+
+/* ---- Мобильный блок ---- */
+
+.header__mobile-actions {
+  display: none;
+  align-items: center;
+  gap: 16px;
+}
+
+.header__icon-btn {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  background: var(--primary);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.header__burger-icon,
+.header__close-icon {
+  display: flex;
+}
+
+.header__close-icon {
+  display: none;
+}
+
+body:has(.mobile-menu.open) .header__burger-icon {
+  display: none;
+}
+
+
+body:has(.mobile-menu.open) .header__close-icon {
+  display: flex;
+}
+
+/* =============================================
+   МОБИЛЬНОЕ МЕНЮ
+   ============================================= */
+
+.mobile-menu {
+  position: fixed;
+  top: var(--header-h);
+  left: 0;
+  right: 0;
+  z-index: 99;
+  max-height: calc(100vh - var(--header-h));
+  overflow-y: auto;
+  background: var(--bg);
+  padding: 32px 0;
+  transform: translateY(-12px);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform .25s ease, opacity .25s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mobile-menu.open {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mobile-menu__list {
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+  margin-bottom: 32px;
+  align-items: center;
+}
+
+.mobile-menu__list a {
+  font-size: 16px;
+  color: var(--color-light);
+}
+
+.mobile-menu__divider {
+  height: 1px;
+  background: var(--color-light-secondary);
+  max-width: 172px;
+  width: 100%;
+  opacity: .3;
+  margin: 0 auto 32px;
+}
+
+.mobile-menu__contacts {
+  margin-bottom: 24px;
+  justify-self: center;
+}
+
+
+.mobile-menu__phone svg,
+.mobile-menu__hours svg {
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+.mobile-menu__btn {
+  width: 100%;
+  max-width: 172px;
+  padding: 0;
+  justify-self: center;
+  justify-content: center;
+}
+
+@media (max-width: 1280px) {
+  .header__logo-icon {
+    width: 56px;
+  }
+
+  .header__menu {
+    gap: 24px;
+  }
+}
+
+/* ============================================
+   ПЛАНШЕТ / МОБАЙЛ ≤ 1080px
+   ============================================ */
+
+@media (max-width: 1080px) {
+  .header__menu,
+  .header__wrapper {
+    display: none;
+  }
+
+  .header__mobile-actions {
+    display: flex;
+  }
+}
+
+@media (max-width: 768px) {
+  .header__logo-text {
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,617 @@
+/* =============================================
+   СТРАНИЦА ОТДЕЛЬНОЙ УСЛУГИ
+   ============================================= */
+
+.service-hero-page {
+  position: relative;
+  overflow: hidden;
+  padding: calc(var(--header-h) + 138px) 0 112px;
+  background: var(--bg);
+}
+
+.service-hero-page__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.service-hero-page__bg picture,
+.service-hero-page__bg img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: left center;
+}
+
+.service-hero-page__bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(85.87deg, rgba(67, 67, 70, 0.5) 31.15%, rgba(67, 67, 70, 0.3) 55.97%);
+
+}
+
+.service-hero-page .container {
+  position: relative;
+  z-index: 1;
+}
+
+.service-hero-page__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.service-hero-page__content {
+  max-width: 626px;
+}
+
+.service-hero-page__eyebrow {
+  color: var(--primary);
+  margin-bottom: 14px;
+}
+
+.service-hero-page__title {
+  color: var(--color-dark);
+  margin-bottom: 12px;
+}
+
+.service-hero-page__text {
+  color: var(--color-dark-secondary);
+  margin-bottom: 12px;
+  max-width: 550px;
+}
+
+.service-hero-page__price {
+  color: var(--primary);
+  margin-bottom: 32px;
+}
+
+.service-hero-page__btn {
+  margin-bottom: 44px;
+}
+
+.service-hero-page__features {
+  display: flex;
+  gap: 20px;
+}
+
+.service-hero-page__feature {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-right: 20px;
+  border-right: 1px solid #2C2B2B55;
+}
+
+.service-hero-page__feature:last-child {
+  border: none;
+  padding: 0;
+}
+
+.service-hero-page__feature .text-caption {
+  color: var(--color-dark-secondary);
+}
+
+.service-hero-page__feature-icon {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+/* ---- Технология ---- */
+
+.service-tech {
+  position: relative;
+  overflow: hidden;
+  padding: 112px 0;
+  background: var(--color-dark-secondary);
+}
+
+.service-tech__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.service-tech__bg picture,
+.service-tech__bg img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.service-tech .container {
+  position: relative;
+  z-index: 1;
+}
+
+.service-tech__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 48px;
+}
+
+.service-tech__eyebrow {
+  color: var(--primary);
+  margin-bottom: 14px;
+}
+
+.service-tech__title {
+  margin-bottom: 14px;
+  max-width: 494px;
+}
+
+.service-tech__text {
+  color: var(--color-light-secondary);
+  max-width: 494px;
+}
+
+.service-tech__grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 24px;
+  padding-top: 28px;
+  position: relative;
+}
+
+.service-tech__grid::before {
+  position: absolute;
+  content: '';
+  display: block;
+  width: 82%;
+  height: 1px;
+  background-color: var(--primary);
+  left: 0;
+  top: 0;
+}
+
+.service-tech__step {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding-right: 24px;
+  border-right: 1px solid #DEDEDE33;
+}
+
+.service-tech__step:last-child {
+  padding: 0;
+  border: 0;
+}
+
+.service-tech__step::before {
+  position: absolute;
+  display: block;
+  width: 6px;
+  height: 6px;
+  content: '';
+  background-color: var(--primary);
+  top: -30px;
+  left: 0;
+}
+
+.service-tech__num {
+  color: var(--primary);
+  margin-bottom: 13px;
+  font-size: 44px;
+  font-family: var(--font-heading);
+}
+
+.service-tech__icon {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+  margin-bottom: 20px;
+}
+
+.service-tech__step-title {
+  margin-bottom: 12px;
+  color: var(--color-light);
+  text-transform: initial;
+  font-weight: 600;
+}
+
+.service-tech__step-text {
+  color: var(--color-light-secondary);
+}
+
+/* ---- Цена ---- */
+
+.service-price {
+  position: relative;
+  overflow: hidden;
+  padding: 112px 0;
+  background: var(--bg);
+}
+
+.service-price__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.service-price__bg picture,
+.service-price__bg img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.service-price__bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(358.95deg, rgba(67, 67, 70, 0.24) 9.55%, rgba(125, 125, 129, 0.8) 60.2%);
+
+}
+
+.service-price .container {
+  position: relative;
+  z-index: 1;
+}
+
+.service-price__inner {
+  display: grid;
+  grid-template-columns: 386px 1fr;
+  gap: 64px;
+}
+
+.service-price__content {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  width: 386px;
+}
+
+.service-price__header {
+  margin-bottom: 32px;
+}
+
+.service-price__eyebrow {
+  color: var(--primary);
+  margin-bottom: 14px;
+}
+
+.service-price__title {
+  margin-bottom: 14px;
+  color: var(--color-dark);
+}
+
+.service-price__text {
+  color: var(--color-dark-secondary);
+}
+
+.service-price__card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  margin-bottom: 40px;
+  border: 1px solid #3F3FCD;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 8px;
+}
+
+.service-price__card-label {
+  color: var(--color-dark-secondary);
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.service-price__card-label::before {
+  display: block;
+  content: '';
+  height: 1px;
+  width: 62px;
+  background-color: var(--primary);
+}
+
+.service-price__card-value {
+  color: var(--primary);
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.service-price__card-note {
+  color: #6B6F76;
+}
+
+.service-price__card-btn {
+  width: 100%;
+  justify-content: center;
+}
+
+.service-price__grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.service-price__factor {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  background: #F7F7F9;
+}
+
+.service-price__num {
+  color: var(--primary);
+  margin-bottom: 10px;
+  font-size: 44px;
+}
+
+.service-price__icon {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.service-price__factor-title {
+  color: var(--color-dark);
+  margin-bottom: 12px;
+  font-weight: 600;
+  text-transform: initial;
+}
+
+.service-price__factor-text {
+  color: var(--color-dark-secondary);
+}
+
+.service-price__card-btn {
+  width: max-content;
+  margin-top: auto;
+}
+
+/* ---- Портфолио ---- */
+
+.service-portfolio {
+  padding: 112px 0;
+  background: var(--bg);
+}
+
+.service-portfolio__header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.service-portfolio__eyebrow {
+  color: var(--primary);
+  margin-bottom: 12px;
+}
+
+.service-portfolio__title {
+  margin-bottom: 12px;
+}
+
+.service-portfolio__text {
+  opacity: .7;
+  max-width: 560px;
+}
+
+.service-portfolio__all {
+  flex-shrink: 0;
+  padding: 14px 24px;
+}
+
+@media (max-width: 1280px) {
+  .service-hero-page__bg::after {
+    background: #43434680;
+  }
+}
+
+/* ============================================
+   ПЛАНШЕТ / МОБАЙЛ ≤ 1080px
+   ============================================ */
+
+@media (max-width: 1080px) {
+  .service-hero-page__inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .service-hero-page__content {
+    max-width: 100%;
+  }
+
+  .service-tech__header {
+    flex-direction: column;
+  }
+
+  .service-tech__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .service-price__inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .service-price__content {
+    width: 100%;
+  }
+
+  .service-price__grid {
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    gap: 20px;
+  }
+
+  .service-portfolio__header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .service-calc__inner {
+    flex-direction: column;
+  }
+
+  .service-calc__content {
+    max-width: 100%;
+  }
+
+  .service-calc__form-wrap {
+    max-width: 100%;
+  }
+
+  .service-tech__grid::before {
+    display: none;
+  }
+
+  .service-tech__step::before {
+    display: none;
+  }
+
+  .service-tech__step {
+    padding-right: 0;
+    border: none;
+  }
+}
+
+/* ============================================
+   МОБАЙЛ ≤ 768px
+   ============================================ */
+
+@media (max-width: 768px) {
+  .service-hero-page {
+    padding: calc(var(--header-h) + 20px) 0 56px;
+  }
+
+  .service-hero-page .breadcrumb {
+    margin-bottom: 24px;
+  }
+
+  .service-tech,
+  .service-price,
+  .service-portfolio,
+  .service-calc {
+    padding: 56px 0;
+  }
+  
+  .service-price__factor {
+    display: grid;
+    grid-template-columns: 71px 1fr;
+    grid-template-rows: max-content max-content 1fr;
+    gap: 10px;
+  }
+
+  .service-price__num {
+    grid-column: 1;
+    grid-row: 1 / 3;
+    margin-bottom: 0;
+  }
+
+  .service-price__icon {
+    grid-row: 3;
+    grid-column: 1;
+    margin-bottom: 0;
+  }
+
+  .service-price__factor-title {
+    margin-bottom: 0;
+  }
+
+  .service-price__factor-text {
+    grid-column: 2;
+    grid-row: 2 / 4;
+  }
+
+  .service-price__card-btn {
+    width: 100%;
+  }
+
+  .service-tech__grid,
+  .service-price__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-calc__form-wrap {
+    padding: 24px 20px;
+  }
+
+  .service-calc__form-wrap .modal__row {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .service-hero-page__features {
+    gap: 8px;
+  }
+
+  .service-hero-page__feature {
+    padding-right: 8px;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .service-hero-page__btn {
+    width: 100%;
+  }
+
+  .service-tech__grid {
+    gap: 12px;
+  }
+
+  .service-tech__step {
+    padding-left: 49px;
+    
+  }
+
+.service-tech__step:last-child {
+  padding-left: 49px;
+  
+}
+
+
+
+  .service-tech__step-text {
+    padding-bottom: 12px;
+    border-bottom: 1px solid #DEDEDE33;
+  }
+
+  .service-tech__step:last-child .service-tech__step-text {
+  border: none;
+  padding-bottom: 0;
+}
+
+  .service-tech__step::before {
+    display: block;
+    left: 15px;
+    top: 64px;
+  }
+
+  .service-tech__step::after {
+    display: block;
+    content: '';
+    width: 1px;
+    height: calc(100% - 46px);
+    position: absolute;
+    top: 64px;
+    left: 18px;
+    background-color: var(--primary);
+  } 
+  .service-tech__step:last-child::before,
+  .service-tech__step:last-child::after {
+    display: none;
+  }
+
+  .service-tech__num {
+    position: absolute;
+    left: 0;
+    top: 12px;
+  }
+}

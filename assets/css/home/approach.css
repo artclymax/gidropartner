@@ -1,0 +1,193 @@
+/* =============================================
+   НАШ ПОДХОД
+   ============================================= */
+
+.home-approach {
+  padding: 80px 0;
+  background: var(--bg);
+}
+
+.home-approach__inner {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.home-approach__content {
+  max-width: 479px;
+  flex-shrink: 0;
+}
+
+.home-approach__eyebrow {
+  color: var(--primary);
+  margin-bottom: 14px;
+}
+
+.home-approach__title {
+  margin-bottom: 14px;
+}
+
+.home-approach__text {
+  color: var(--color-light-secondary);
+  margin-bottom: 64px;
+}
+
+.home-approach__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  flex: 1;
+  width: 100%;
+  max-width: 602px;
+}
+
+.home-approach__card {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  background: #35353B;
+  border: 1px solid #4D4D4D;
+}
+
+.home-approach__icon {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+  margin-bottom: 16px;
+}
+
+.home-approach__card-title {
+  margin-bottom: 12px;
+  text-transform: initial;
+  line-height: 1.3em;
+  font-weight: 600;
+}
+
+.home-approach__card-text {
+  color: var(--color-light-secondary);
+}
+
+/* ---- Разделитель + «Нам доверяют» ---- */
+
+.home-approach__divider {
+  border-top: 1px solid var(--primary);
+  margin: 64px 0;
+}
+
+.home-approach__clients {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 132px;
+}
+
+.home-approach__clients-content {
+  max-width: 276px;
+  flex-shrink: 0;
+}
+
+.home-approach__clients-title {
+  position: relative;
+  color: var(--color-light);
+  margin-bottom: 12px;
+  width: max-content;
+}
+
+.home-approach__clients-title::after {
+  content: '';
+  position: absolute;
+  left: calc(100% + 16px);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 62px;
+  height: 1px;
+  background: var(--primary);
+}
+
+.home-approach__clients-text {
+  color: var(--color-light-secondary);
+}
+
+.home-approach__clients-marquee {
+  flex: 1;
+  min-width: 0;
+  width: 100%;
+}
+
+/* ============================================
+   ПЛАНШЕТ / МОБАЙЛ ≤ 1080px
+   ============================================ */
+
+@media (max-width: 1080px) {
+  .home-approach__inner {
+    flex-direction: column;
+  }
+
+  .home-approach__content {
+    max-width: 100%;
+  }
+
+  .home-approach__text {
+    margin-bottom: 40px;
+  }
+
+  .home-approach__grid {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .home-approach__clients {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .home-approach__divider {
+    margin: 40px 0;
+  }
+
+  .home-approach__clients-content {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+/* ============================================
+   МОБАЙЛ ≤ 768px
+   ============================================ */
+
+@media (max-width: 768px) {
+  .home-approach {
+    padding: 56px 0;
+  }
+
+  .home-approach__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-approach__card {
+    display: grid;
+    grid-template-columns: 72px 1fr;
+    grid-template-rows: max-content 1fr;
+    gap: 12px 10px;
+  }
+
+  .home-approach__card-title {
+    margin-bottom: 0;
+  }
+
+  .home-approach__btn {
+    width: 100%;
+
+  }
+
+  .home-approach__icon {
+    grid-row: 1 / 3;
+    align-self: flex-start;
+  }
+
+  .home-approach__clients-marquee {
+    width: calc(100% + 20px);
+    margin-left: -10px;
+  }
+}

@@ -1,0 +1,66 @@
+/* =============================================
+   УСЛУГИ
+   ============================================= */
+
+.home-services {
+  position: relative;
+  overflow: hidden;
+  padding: 112px 0;
+  background: var(--color-dark-secondary);
+}
+
+.home-services__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.home-services__bg::after {
+  display: block;
+  position: absolute;
+  content: '';
+  inset: 0;
+  background-color: rgba(67, 67, 70, 0.5);
+}
+
+.home-services__bg picture,
+.home-services__bg img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.home-services .container {
+  position: relative;
+  z-index: 1;
+}
+
+.home-services__header {
+  max-width: 690px;
+  margin-bottom: 64px;
+}
+
+.home-services__eyebrow {
+  color: var(--primary);
+  margin-bottom: 14px;
+}
+
+.home-services__title {
+  margin-bottom: 14px;
+  color: var(--color-dark);
+}
+
+.home-services__text {
+ color: var(--color-dark-secondary);
+}
+
+/* ============================================
+   МОБАЙЛ ≤ 768px
+   ============================================ */
+
+@media (max-width: 768px) {
+  .home-services {
+    padding: 56px 0;
+  }
+}

@@ -1,0 +1,134 @@
+/* =============================================
+   ГДЕ РАБОТАЮТ ПОКРЫТИЯ
+   ============================================= */
+
+.home-coating-places {
+  position: relative;
+  overflow: hidden;
+  padding: 112px 0;
+  background: var(--bg);
+}
+
+.home-coating-places__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-color: var(--bg);
+}
+
+.home-coating-places__bg picture,
+.home-coating-places__bg img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+.home-coating-places .container {
+  position: relative;
+  z-index: 1;
+}
+
+.home-coating-places__inner {
+  display: flex;
+  align-items: center;
+}
+
+.home-coating-places__content {
+  max-width: 525px;
+}
+
+.home-coating-places__eyebrow {
+  color: var(--primary);
+  margin-bottom: 14px;
+}
+
+.home-coating-places__title {
+  margin-bottom: 14px;
+  color: var(--color-light);
+}
+
+.home-coating-places__text {
+  margin-bottom: 64px;
+  color: var(--color-light-secondaty);
+}
+
+.home-coating-places__list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: max-content;
+  gap: 20px;
+}
+
+.home-coating-places__item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.home-coating-places__item + span {
+  width: 100%;
+  height: 1px;
+  background-color: rgba(222, 222, 222, 0.3);
+}
+
+
+.home-coating-places__item svg {
+  flex-shrink: 0;
+  color: var(--primary);
+}
+
+/* ============================================
+   ПЛАНШЕТ / МОБАЙЛ ≤ 1080px
+   ============================================ */
+
+@media (max-width: 1080px) {
+  .home-coating-places__inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+}
+
+/* ============================================
+   МОБАЙЛ ≤ 768px
+   ============================================ */
+
+@media (max-width: 768px) {
+  .home-coating-places {
+    padding: 56px 0 clamp(263px, 65vw, 490px);
+  }
+
+  .home-coating-places__text {
+    margin-bottom: 40px;
+  }
+
+  .home-coating-places__content {
+    max-width: 100%;
+  }
+
+  .home-coating-places__list {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 100%;
+    gap: 8px;
+  }
+
+  .home-coating-places__item + span {
+    width: 1px;
+    height: 80px;
+  }
+
+  .home-coating-places__item {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .home-coating-places__bg img {
+    object-position: bottom center;
+  }
+}
